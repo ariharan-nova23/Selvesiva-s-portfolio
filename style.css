@@ -930,7 +930,7 @@ nav a:hover{
 
 .project-section-title{
   position:absolute;
-  top:88px;
+  top:72px;
   left:0;
   width:100%;
   z-index:10;
@@ -954,7 +954,7 @@ nav a:hover{
   display:flex;
   justify-content:center;
   align-items:flex-start;
-  padding:155px 7% 55px;
+  padding:145px 7% 38px;
   transform:translateY(100%);
   transition:
     transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
@@ -973,12 +973,12 @@ nav a:hover{
 }
 
 .project-slide.is-behind-one{
-  transform:translateY(-34px) scale(0.982);
+  transform:translateY(-18px) scale(0.986);
 }
 
 .project-slide.is-behind-two{
-  transform:translateY(-64px) scale(0.965);
-  opacity:0.56;
+  transform:translateY(-36px) scale(0.972);
+  opacity:0.52;
 }
 
 .project-slide.is-current{
@@ -1007,8 +1007,8 @@ nav a:hover{
 
 .project-card-stack{
   width:min(1120px,100%);
-  height:620px;
-  padding:30px;
+  height:clamp(500px, calc(100vh - 190px), 620px);
+  padding:clamp(22px, 2.2vw, 30px);
   border:1px solid rgba(255,255,255,0.16);
   border-radius:22px;
   background:
@@ -1028,8 +1028,8 @@ nav a:hover{
   justify-content:space-between;
   align-items:flex-start;
   gap:24px;
-  min-height:118px;
-  margin-bottom:24px;
+  min-height:112px;
+  margin-bottom:18px;
   flex-shrink:0;
 }
 
@@ -1041,14 +1041,14 @@ nav a:hover{
 
 .project-copy span{
   color:rgba(255,255,255,0.5);
-  font-size:70px;
+  font-size:clamp(46px, 5vw, 70px);
   font-weight:900;
   line-height:0.9;
 }
 
 .project-copy h2{
   color:var(--project-text);
-  font-size:clamp(34px, 4vw, 54px);
+  font-size:clamp(30px, 3.4vw, 50px);
   font-weight:900;
   line-height:0.95;
   letter-spacing:1px;
@@ -1064,8 +1064,8 @@ nav a:hover{
 .project-summary{
   max-width:560px;
   color:#b8b8b8;
-  font-size:13px;
-  line-height:1.6;
+  font-size:12px;
+  line-height:1.5;
 }
 
 .project-info a{
@@ -1105,6 +1105,8 @@ nav a:hover{
 
 .project-image-link{
   display:block;
+  height:100%;
+  min-height:0;
   overflow:hidden;
   border-radius:16px;
 }
@@ -1130,6 +1132,10 @@ nav a:hover{
   grid-template-rows:1fr 1fr;
   gap:18px;
   min-height:0;
+}
+
+.small-preview-stack .project-image-link{
+  height:100%;
 }
 
 .small-preview-stack img{
@@ -1162,7 +1168,7 @@ nav a:hover{
   }
 
   .project-slide{
-    padding:130px 20px 35px;
+    padding:126px 20px 30px;
     align-items:flex-start;
   }
 
@@ -1175,14 +1181,16 @@ nav a:hover{
   }
 
   .project-card-stack{
-    height:calc(100vh - 165px);
-    min-height:520px;
-    padding:22px;
+    height:calc(100vh - 156px);
+    min-height:0;
+    padding:18px;
   }
 
   .project-info{
-    align-items:center;
-    margin-bottom:24px;
+    align-items:flex-start;
+    min-height:126px;
+    margin-bottom:14px;
+    gap:12px;
   }
 
   .project-copy{
@@ -1194,13 +1202,13 @@ nav a:hover{
   }
 
   .project-copy h2{
-    font-size:28px;
+    font-size:24px;
   }
 
   .project-summary{
-    max-width:280px;
-    font-size:11px;
-    line-height:1.45;
+    max-width:230px;
+    font-size:10px;
+    line-height:1.35;
   }
 
   .project-info a{
@@ -1211,10 +1219,16 @@ nav a:hover{
   .project-image-grid.two-column,
   .project-image-grid.three-image{
     grid-template-columns:1fr;
+    gap:10px;
   }
 
-  .project-image-grid img,
-  .small-preview-stack img{
-    height:190px;
+  .small-preview-stack{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr;
+    gap:10px;
+  }
+
+  .project-image-grid img{
+    height:100%;
   }
 }
