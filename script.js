@@ -161,8 +161,8 @@ if (contactForm) {
     submitBtn.disabled = true;
 
     // EMAILJS SERVICE ID AND TEMPLATE ID
-    const serviceID = "service_thil14a";
-    const templateID = "template_sdshz6j";
+    const serviceID = "service_r815j2g";
+    const templateID = "template_eztd1h9";
 
     // Set up template parameters EXACTLY matching the EmailJS template
     const templateParams = {
@@ -174,7 +174,7 @@ if (contactForm) {
 
     // Send via EmailJS using explicit send method
     emailjs.send(serviceID, templateID, templateParams, {
-      publicKey: "rDB2jmNGrXGptya2o",
+      publicKey: "yFHGGjUMi8uZdfRA6",
     })
       .then((response) => {
         // Success
