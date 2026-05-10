@@ -701,12 +701,12 @@ nav a:hover{
 
 .contact-form input{
   width:100%;
-  padding:24px 26px;
+  padding:28px 30px;
   border-radius:20px;
   border:1px solid rgba(255,255,255,0.18);
   background:rgba(255,255,255,0.08);
   color:#ffffff;
-  font-size:1.08rem;
+  font-size:1.15rem;
   outline:none;
   transition:0.3s;
 }
@@ -715,8 +715,8 @@ nav a:hover{
   color:#c1c1c1;
 }
 
-.contact-form input[type="email"]{
-  margin-bottom:30px;
+.contact-form input[type="tel"]{
+  margin-bottom:20px;
 }
 .contact-form button{
   width:100%;
