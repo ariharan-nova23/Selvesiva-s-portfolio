@@ -115,3 +115,93 @@ if(techGroups.length){
 
   techGroups.forEach((group) => techObserver.observe(group));
 }
+
+// ================= EMAILJS INTEGRATION =================
+
+// EMAILJS PUBLIC KEY
+emailjs.init({
+  publicKey: "rDB2jmNGrXGptya2o",
+});
+
+const contactForm = document.getElementById("contact-form");
+const submitBtn = document.getElementById("submit-btn");
+const formMessage = document.getElementById("form-message");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Get form values
+    const firstName = contactForm.firstName.value.trim();
+    const lastName = contactForm.lastName.value.trim();
+    const email = contactForm.email.value.trim();
+    const mobile = contactForm.mobile.value.trim();
+
+    // Reset message
+    formMessage.textContent = "";
+    formMessage.className = "form-message";
+
+    // 1. Validate Email (Modern Regex)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      showFormMessage("Please enter a valid email address.", "error");
+      return;
+    }
+
+    // 2. Validate Mobile (Basic numeric and length check)
+    const mobileRegex = /^[0-9]{7,15}$/;
+    if (!mobileRegex.test(mobile)) {
+      showFormMessage("Please enter a valid mobile number.", "error");
+      return;
+    }
+
+    // Update loading state
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = "SENDING...";
+    submitBtn.disabled = true;
+
+    // EMAILJS SERVICE ID AND TEMPLATE ID
+    const serviceID = "service_thil14a";
+    const templateID = "template_sdshz6j";
+
+    // Set up template parameters EXACTLY matching the EmailJS template
+    const templateParams = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      mobile: mobile
+    };
+
+    // Send via EmailJS using explicit send method
+    emailjs.send(serviceID, templateID, templateParams, {
+      publicKey: "rDB2jmNGrXGptya2o",
+    })
+      .then((response) => {
+        // Success
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+        
+        console.log("EmailJS SUCCESS!", response.status, response.text);
+        
+        showFormMessage("Message sent successfully!", "success");
+        contactForm.reset(); // Reset form fields
+      })
+      .catch((error) => {
+        // Error
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+        
+        // Log detailed error for debugging
+        const errorText = error && error.text ? error.text : JSON.stringify(error);
+        console.error("EmailJS ERROR Response:", errorText, error);
+        
+        showFormMessage("Failed to send message: " + errorText, "error");
+      });
+  });
+}
+
+function showFormMessage(message, type) {
+  formMessage.textContent = message;
+  formMessage.className = `form-message ${type}`;
+}
+

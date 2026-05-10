@@ -25,6 +25,17 @@
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "rDB2jmNGrXGptya2o",
+      });
+   })();
+</script>
+
 </head>
 
 <body>
@@ -522,14 +533,15 @@
     </div>
 
     <div class="contact-right">
-      <form class="contact-form" data-aos="fade-up" data-aos-delay="800">
+      <form id="contact-form" class="contact-form" data-aos="fade-up" data-aos-delay="800">
         <div class="contact-form-grid">
           <input type="text" name="firstName" placeholder="First Name" required>
           <input type="text" name="lastName" placeholder="Second Name" required>
         </div>
         <input type="email" name="email" placeholder="Email" required>
         <input type="tel" name="mobile" placeholder="Mobile Number" required>
-        <button type="submit">SEND</button>
+        <button type="submit" id="submit-btn">SEND</button>
+        <p id="form-message" class="form-message"></p>
       </form>
     </div>
   </div>
@@ -562,6 +574,9 @@
       AOS.refresh();
     });
   </script>
+
+  <!-- EMAILJS CDN -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <!-- JS -->
 

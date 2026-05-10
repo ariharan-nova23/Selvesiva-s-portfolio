@@ -803,6 +803,21 @@ nav a:hover{
   box-shadow:0 20px 55px rgba(255,79,216,0.35);
 }
 
+.form-message {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.95rem;
+  min-height: 20px; /* Keep space so it doesn't jump */
+}
+
+.form-message.success {
+  color: #4CAF50;
+}
+
+.form-message.error {
+  color: #f44336;
+}
+
 @media(max-width:900px){
   .contact{
     padding:70px 30px 80px;
