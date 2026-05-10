@@ -534,28 +534,32 @@
     </div>
   </div>
   <div class="contact-stickers">
-    <div class="contact-sticker contact-sticker1" data-aos="fade-up" data-aos-delay="100">
+    <div class="contact-sticker contact-sticker1" data-aos="fade-up" data-aos-delay="100" data-aos-anchor=".contact">
       <img src="sticker/moonknight-tech.png" alt="Moonknight sticker">
     </div>
-    <div class="contact-sticker contact-sticker2" data-aos="fade-up" data-aos-delay="200">
+    <div class="contact-sticker contact-sticker2" data-aos="fade-up" data-aos-delay="200" data-aos-anchor=".contact">
       <img src="sticker/code-tech.png" alt="Code sticker">
     </div>
-    <div class="contact-sticker contact-sticker3" data-aos="fade-up" data-aos-delay="300">
+    <div class="contact-sticker contact-sticker3" data-aos="fade-up" data-aos-delay="300" data-aos-anchor=".contact">
       <img src="sticker/data-scientist.png" alt="Data scientist sticker">
     </div>
-    <div class="contact-sticker contact-sticker4" data-aos="fade-up" data-aos-delay="400">
+    <div class="contact-sticker contact-sticker4" data-aos="fade-up" data-aos-delay="400" data-aos-anchor=".contact">
       <img src="sticker/spider-tech.png" alt="Spider sticker">
     </div>
   </div>
 </section>
 
-  <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
       once: true,
       offset: 50,
       duration: 800,
+    });
+    
+    // Refresh AOS on window load to recalculate offsets (fixes elements not appearing on refresh)
+    window.addEventListener('load', function() {
+      AOS.refresh();
     });
   </script>
 
