@@ -502,7 +502,7 @@ nav a:hover{
 
 .contact-sticker{
   position:absolute;
-  width:210px;
+  width:240px;
   opacity:1;
   will-change:transform, opacity;
   animation:footerFloat 6s ease-in-out infinite;
@@ -524,7 +524,8 @@ nav a:hover{
 
 .contact-sticker2{
   bottom:15px;
-  left:42%;
+  left:30%;
+  width:280px;
   animation-delay:1.2s;
 }
 
