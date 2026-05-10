@@ -715,8 +715,12 @@ nav a:hover{
   color:#c1c1c1;
 }
 
+.contact-form input[type="email"]{
+  margin-bottom:40px;
+}
+
 .contact-form input[type="tel"]{
-  margin-bottom:20px;
+  margin-bottom:30px;
 }
 .contact-form button{
   width:100%;
