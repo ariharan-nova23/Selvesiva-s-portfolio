@@ -634,13 +634,13 @@ nav a:hover{
 
 .contact-card{
   display:flex;
-  align-items:flex-start;
+  align-items:center;
   gap:18px;
-  padding:24px;
-  border-radius:28px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.1);
-  backdrop-filter:blur(16px);
+  padding:0;
+  border-radius:0;
+  background:transparent;
+  border:none;
+  backdrop-filter:none;
 }
 
 .contact-card .icon{
@@ -652,37 +652,34 @@ nav a:hover{
   align-items:center;
   justify-content:center;
   font-size:26px;
-  background:rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.08);
   border:1px solid rgba(255,255,255,0.12);
 }
 
 .contact-card strong{
   display:block;
   color:#ffffff;
-  font-size:16px;
-  margin-bottom:6px;
+  font-size:18px;
+  margin-bottom:4px;
 }
 
 .contact-card p{
   margin:0;
-  color:#c3c3c3;
-  font-size:0.95rem;
-  line-height:1.7;
+  color:#d5d5d5;
+  font-size:1rem;
+  line-height:1.6;
 }
 
 .social-links{
   display:grid;
-  gap:14px;
+  gap:12px;
 }
 
 .social-links a{
   display:flex;
   align-items:center;
   gap:14px;
-  padding:18px 22px;
-  border-radius:24px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.1);
+  padding:0;
   color:#fff;
   text-decoration:none;
   font-size:1rem;
@@ -690,13 +687,12 @@ nav a:hover{
 }
 
 .social-links a:hover{
-  transform:translateY(-2px);
-  background:rgba(255,255,255,0.08);
+  opacity:0.82;
 }
 
 .social-links img{
-  width:38px;
-  height:38px;
+  width:36px;
+  height:36px;
   object-fit:contain;
 }
 
@@ -710,10 +706,10 @@ nav a:hover{
   width:100%;
   padding:40px;
   border-radius:34px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.1);
-  backdrop-filter:blur(20px);
-  box-shadow:0 40px 90px rgba(0,0,0,0.2);
+  background:transparent;
+  border:none;
+  backdrop-filter:none;
+  box-shadow:none;
 }
 
 .contact-form-grid{
@@ -725,23 +721,24 @@ nav a:hover{
 
 .contact-form input{
   width:100%;
-  padding:18px 22px;
-  border-radius:18px;
-  border:1px solid rgba(255,255,255,0.12);
-  background:rgba(255,255,255,0.06);
+  padding:22px 24px;
+  border-radius:0;
+  border:none;
+  border-bottom:2px solid rgba(255,255,255,0.18);
+  background:transparent;
   color:#ffffff;
-  font-size:0.98rem;
+  font-size:1rem;
   outline:none;
   transition:0.3s;
 }
 
 .contact-form input::placeholder{
-  color:#b6b6b6;
+  color:#c1c1c1;
 }
 
 .contact-form input:focus{
-  border-color:#7a2cff;
-  background:rgba(255,255,255,0.12);
+  border-bottom-color:#7a2cff;
+  background:rgba(255,255,255,0.04);
 }
 
 .contact-form button{
