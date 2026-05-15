@@ -1837,18 +1837,7 @@ nav a:focus-visible{
   .skills-heading h2 {
     font-size: clamp(48px, 14vw, 72px);
   }
-  .project-stage {
-    position: static;
-    height: auto;
-    overflow: visible;
-    display: flex;
-    flex-direction: column;
-  }
-  .project-slide {
-    position: static;
-    transform: none;
-    opacity: 1;
-  }
+
   .contact-stickers {
     display: none;
   }
