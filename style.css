@@ -1738,3 +1738,44 @@ nav a:focus-visible{
     width:100%;
   }
 }
+
+@media(max-width:480px){
+  .hero{
+    flex-direction:column;
+  }
+  .left-content, .contact-btn{
+    position:relative;
+    left:auto;
+    top:auto;
+    transform:none;
+    text-align:center;
+  }
+  .face img{
+    width:220px;
+    opacity:0.55;
+  }
+  .about-content h2{
+    font-size:clamp(42px, 14vw, 64px);
+  }
+  .skills-heading h2{
+    font-size:clamp(48px, 16vw, 72px);
+  }
+  .project-stage{
+    position:static;
+    height:auto;
+    overflow:visible;
+    display:flex;
+    flex-direction:column;
+  }
+  .project-slide{
+    position:static;
+    transform:none;
+    opacity:1;
+  }
+  .contact-stickers{
+    display:none;
+  }
+  nav a{
+    letter-spacing:2px;
+  }
+}

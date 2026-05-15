@@ -77,6 +77,14 @@ const updateProjectSlides = () => {
     return;
   }
 
+  if (window.innerWidth <= 480) {
+    projectSlides.forEach((slide) => {
+      slide.classList.add("is-visible", "is-current");
+      slide.classList.remove("is-behind", "is-behind-one", "is-behind-two");
+    });
+    return;
+  }
+
   const rect = projectSection.getBoundingClientRect();
   const scrollableDistance = projectSection.offsetHeight - window.innerHeight;
   const progress = Math.min(Math.max(-rect.top / scrollableDistance, 0), 1);
