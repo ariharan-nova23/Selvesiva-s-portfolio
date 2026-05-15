@@ -1739,43 +1739,117 @@ nav a:focus-visible{
   }
 }
 
-@media(max-width:480px){
-  .hero{
-    flex-direction:column;
+@media (max-width: 768px) {
+  /* Prevent any text overflow */
+  body, html {
+    overflow-x: hidden;
   }
-  .left-content, .contact-btn{
-    position:relative;
-    left:auto;
-    top:auto;
-    transform:none;
-    text-align:center;
+  h1, h2, p, a {
+    word-wrap: break-word;
   }
-  .face img{
-    width:220px;
-    opacity:0.55;
+
+  /* Compact & Centered Navbar */
+  nav {
+    padding: 15px 10px;
+    background: rgba(5,5,5,0.85);
   }
-  .about-content h2{
-    font-size:clamp(42px, 14vw, 64px);
+  nav ul {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
   }
-  .skills-heading h2{
-    font-size:clamp(48px, 16vw, 72px);
+  nav a {
+    font-size: 13px;
+    letter-spacing: 2px;
   }
-  .project-stage{
-    position:static;
-    height:auto;
-    overflow:visible;
-    display:flex;
-    flex-direction:column;
+
+  /* Stack Hero Content Vertically */
+  .hero {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+    padding: 120px 20px 60px;
+    gap: 30px;
+    overflow-x: hidden;
+    overflow-y: visible;
   }
-  .project-slide{
-    position:static;
-    transform:none;
-    opacity:1;
+
+  /* Reset absolute positioning for stacking */
+  .big-text, 
+  .left-content, 
+  .contact-btn, 
+  .face {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    z-index: 5;
   }
-  .contact-stickers{
-    display:none;
+
+  /* Hero Heading */
+  .big-text {
+    margin-bottom: 10px;
   }
-  nav a{
-    letter-spacing:2px;
+  .big-text h1 {
+    font-size: clamp(38px, 10vw, 60px);
+    line-height: 1.1;
+    transform: none;
+    white-space: normal;
+  }
+
+  /* Hero Description */
+  .left-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 100%;
+  }
+
+  /* CTA Button */
+  .contact-btn {
+    margin: 10px 0 20px;
+  }
+
+  /* Avatar Image Proportional Scaling */
+  .face {
+    margin-top: 20px;
+    animation: none; /* Disable float to prevent overflow */
+  }
+  .face img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    opacity: 1; /* Reset opacity so it acts as normal content */
+  }
+
+  /* Retain previous responsive fixes */
+  .about-content h2 {
+    font-size: clamp(42px, 12vw, 64px);
+  }
+  .skills-heading h2 {
+    font-size: clamp(48px, 14vw, 72px);
+  }
+  .project-stage {
+    position: static;
+    height: auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+  }
+  .project-slide {
+    position: static;
+    transform: none;
+    opacity: 1;
+  }
+  .contact-stickers {
+    display: none;
   }
 }
