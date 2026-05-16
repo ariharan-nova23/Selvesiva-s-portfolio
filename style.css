@@ -1749,6 +1749,7 @@ nav a:focus-visible{
 
   /* Compact & Centered Navbar */
   nav {
+    position: fixed; /* FIX: absolute → fixed so nav stays pinned and doesn't detach from sections */
     padding: 15px 10px;
     background: rgba(5,5,5,0.85);
   }

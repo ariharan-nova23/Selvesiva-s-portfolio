@@ -1,6 +1,6 @@
 // HIDE NAVBAR ON SCROLL
 
-let lastScroll = 0;
+let lastScroll = window.pageYOffset || 0; // FIX: init from actual scroll pos
 
 const navbar = document.querySelector("nav");
 
@@ -21,6 +21,9 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll;
 
 });
+
+// FIX: reset scroll on refresh (mobile browser caches scroll pos)
+window.onbeforeunload = () => window.scrollTo(0, 0);
 
 // INTERACTIVE SKILL CARDS
 
@@ -94,9 +97,10 @@ const updateProjectSlides = () => {
 
 };
 
-window.addEventListener("scroll", updateProjectSlides);
-window.addEventListener("resize", updateProjectSlides);
-updateProjectSlides();
+// FIX: wrap in requestAnimationFrame so layout is ready before calculating
+window.addEventListener("scroll", () => requestAnimationFrame(updateProjectSlides));
+window.addEventListener("resize", () => requestAnimationFrame(updateProjectSlides));
+requestAnimationFrame(updateProjectSlides); // FIX: initial call after paint
 
 // TECH STACK SCROLL REVEAL
 
@@ -204,4 +208,3 @@ function showFormMessage(message, type) {
   formMessage.textContent = message;
   formMessage.className = `form-message ${type}`;
 }
-
