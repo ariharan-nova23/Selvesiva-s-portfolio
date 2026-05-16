@@ -1741,7 +1741,7 @@ nav a:focus-visible{
 
 @media (max-width: 768px) {
   /* Prevent any text overflow */
-  body, html {
+  body {
     overflow-x: hidden;
   }
   h1, h2, p, a {
