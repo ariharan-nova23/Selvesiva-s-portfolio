@@ -1132,6 +1132,12 @@ nav a:hover{
   border:1px solid rgba(255,255,255,0.08);
 }
 
+.icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
 /* TITLES */
 
 .skill-card h3{
